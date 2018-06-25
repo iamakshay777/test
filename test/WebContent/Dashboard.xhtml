@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:view contentType="text/html">
+	
+				<h:head>
+				
+					<f:facet name="first">
+		
+						<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+						<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+						
+				
+					</f:facet>
+					
+					
+					</h:head>
+			<h:body>
+		<div style="height:100px">
+		
+		<h:form id="msgs">
+	
+	<p:growl id="msgs" showDetail="true" />
+ 
+        <p:dashboard  id="board" model="#{dash.model}">
+ 
+            <p:panel id="bike"  header="bike">
+                <p:commandLink action="#{dash.signup}">
+				<p:graphicImage style="width:156px;height:145px" url="image/si.png"> </p:graphicImage>
+			</p:commandLink>
+            </p:panel>
+ 
+            <p:panel id="car" header="car">
+                <p:graphicImage style="width:156px;height:145px" url="image/su.png"> </p:graphicImage>
+            </p:panel>
+ 
+            <p:panel id="plan" header="plan">
+         <p:graphicImage style="width:156px;height:145px" url="image/fb.png"> </p:graphicImage>
+            </p:panel>
+ 
+            <p:panel id="cruse" header="cruse">
+                <h:outputText value="cruse Content"> </h:outputText>
+            </p:panel>
+ 
+        </p:dashboard>
+	
+	<div style= "clear:both" ></div>
+	
+
+</h:form>
+
+</div>
+</h:body>
+</f:view>
+</html>

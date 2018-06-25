@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:view contentType="text/html">
+	
+				<h:head>
+				
+					<f:facet name="first">
+		
+						<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+						<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+						
+				
+					</f:facet>
+					
+					
+					</h:head>
+			<h:body>
+		
+			<h:form id="form">		
+				
+<p:dataTable value="#{test.list}" var="tes" rowKey="#{tes.sno}"    >
+		
+	 		<p:column  selectionMode="single"> </p:column> 
+		
+		<p:column headerText="serial no. " >
+		<p:outputLabel value="#{tes.sno}"  ></p:outputLabel>
+		</p:column>
+		
+		
+		
+		<p:column headerText="Name">
+		<p:outputLabel value="#{tes.name}" ></p:outputLabel>
+		</p:column>
+		
+		
+		<p:column headerText="mobile" >
+		<p:outputLabel value="#{tes.mobile}" ></p:outputLabel>
+		</p:column> 
+		
+	
+		<p:column headerText="father name " >
+		<p:outputLabel value="#{tes.fathername}" ></p:outputLabel>
+		</p:column> 
+		
+	
+		<p:column headerText="mother name" >
+		<p:outputLabel value="#{tes.mothername}" ></p:outputLabel>
+		</p:column> 
+		
+	
+		<p:column headerText="gendar" >
+		<p:outputLabel value="#{tes.gendar}" ></p:outputLabel>
+		</p:column> 
+		
+	<p:column headerText="Address" >
+		<p:outputLabel value="#{tes.address}" ></p:outputLabel>
+		</p:column> 
+		
+			
+	<p:column headerText="Date of birth" >
+		<p:outputLabel value="#{tes.dob}" ></p:outputLabel>
+		</p:column> 
+		
+	  	<p:column>
+		  	
+		  	<p:commandButton action="#{test.session}" icon="ui-icon-pencil" update=":form" > 
+		 
+		   <f:setPropertyActionListener value="#{tes}" target="#{test.selected}" > </f:setPropertyActionListener>
+		  
+		  </p:commandButton>
+		  </p:column>
+ 
+ 
+	  	<p:column>
+	  	
+	  	<p:commandButton   action="#{test.delete}" icon="ui-icon-trash" update=":form" > 
+	 
+	   <f:setPropertyActionListener value="#{tes}" target="#{test.selected}" > </f:setPropertyActionListener>
+	  
+	  </p:commandButton>
+	  </p:column>
+
+		
+	  
+		</p:dataTable><br></br>
+		
+				<p:column>
+				
+				<p:commandButton value="back" action="#{test.back}" style="margin-left:50em;" > </p:commandButton>
+				
+				</p:column>
+			
+			
+
+</h:form>
+</h:body>
+</f:view>
+</html>

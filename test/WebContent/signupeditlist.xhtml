@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:view contentType="text/html">
+	
+				<h:head>
+				
+					<f:facet name="first">
+		
+						<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+						<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+						
+				
+					</f:facet>
+					
+					
+					</h:head>
+			<h:body>
+
+			
+			<h:form id="reg">
+			
+			
+			<p:growl autoUpdate="true" ></p:growl>
+					
+			<p:panel header="sign-up here" id="grid"  >
+			<p:panelGrid columns="2"  >			
+			
+		
+			<p:outputLabel value="name" > </p:outputLabel>
+			<p:inputText  value="#{edit.select.name}" required="true" placeholder="Enter your name"  requiredMessage=" plz fill up name" > </p:inputText>
+			
+			
+				
+			<p:outputLabel value="mobile"> </p:outputLabel>
+			<p:inputMask mask="9999999999" value="#{edit.select.mobile}" requiredMessage=" your mobile number  is less than ten" required="true" >
+			
+			</p:inputMask>
+			
+				
+				
+			<p:outputLabel value=" Father name"> </p:outputLabel>
+			<p:inputText  value="#{edit.select.fathername}" required="true" placeholder="Enter your father name" ></p:inputText>
+			
+			
+			<p:outputLabel value="mother name"> </p:outputLabel>
+			<p:inputText  value="#{edit.select.mothername}" required="true" placeholder="Enter your mother name" ></p:inputText>
+			
+			
+				
+				
+				<p:outputLabel value="Gender"></p:outputLabel>
+							<p:selectOneRadio value="#{edit.select.gendar}">
+								<f:selectItem itemLabel="Male" itemValue="male"></f:selectItem>
+								<f:selectItem itemLabel="Female" itemValue="female"></f:selectItem>
+							</p:selectOneRadio>									
+				
+				
+				
+			<p:outputLabel value=" address "> </p:outputLabel>
+			<p:inputTextarea value="#{edit.select.address}"></p:inputTextarea>
+			
+			
+			<p:outputLabel value=" Date of birth "> </p:outputLabel>
+			<p:calendar value="#{edit.select.dob}"  pattern="dd/MM/yyyy" navigator="true" yearRange="c+3:c-3">
+			</p:calendar>
+		
+					</p:panelGrid>
+			
+			</p:panel>
+			
+			
+			
+			
+			</h:form>
+			
+			
+			
+			<p:commandButton  value="update" action="#{edit.update}"></p:commandButton>
+		<p:commandButton  value="back" action="#{edit.back}"></p:commandButton>
+		
+			
+			
+			
+			</h:body>
+			</f:view>
+			</html>
+			

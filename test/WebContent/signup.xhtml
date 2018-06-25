@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	 xmlns:pe="http://primefaces.org/ui/extensions" >
+	<f:view contentType="text/html">
+	
+				<h:head>
+				
+					<f:facet name="first">
+		
+						<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+						<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+						
+				
+					</f:facet>
+					
+					
+					</h:head>
+			<h:body>
+		
+			<h:form id="reg">
+			
+			
+			<p:growl autoUpdate="true" ></p:growl>
+					
+			<p:panel header="sign-up here" id="grid" >
+			<p:panelGrid columns="2"  >			
+			
+		
+			<p:outputLabel value="name" > </p:outputLabel>
+			<p:inputText  value="#{test.name}" required="true" placeholder="Enter your name"  requiredMessage=" plz fill up name" > 
+	 		<pe:keyFilter regEx="/[a-z]/i" > </pe:keyFilter> 
+			</p:inputText>
+			
+			
+				
+			<p:outputLabel value="mobile"> </p:outputLabel>
+			<p:inputMask mask="9999999999" value="#{test.mobile}" requiredMessage=" your mobile number  is less than ten" required="true" >
+			 <pe:keyFilter mask="pnum"> </pe:keyFilter> 
+			</p:inputMask>
+			
+			
+			<p:outputLabel value=" Father name"> </p:outputLabel>
+			<p:inputText  value="#{test.fathername}" required="true" placeholder="Enter your father name" ></p:inputText>
+			
+			
+			<p:outputLabel value="mother name"> </p:outputLabel>
+			<p:inputText  value="#{test.mothername}" required="true" placeholder="Enter your mother name" ></p:inputText>
+			
+			
+			
+				<p:outputLabel value="Gender"></p:outputLabel>
+							<p:selectOneRadio value="#{test.gendar}">
+								<f:selectItem itemLabel="Male" itemValue="male"></f:selectItem>
+								<f:selectItem itemLabel="Female" itemValue="female"></f:selectItem>
+							</p:selectOneRadio>									
+							
+			<p:outputLabel value=" address "> </p:outputLabel>
+			<p:inputTextarea value="#{test.address}"></p:inputTextarea>
+			
+			
+			<p:outputLabel value=" Date of birth "> </p:outputLabel>
+			<p:calendar value="#{test.dob}"  pattern="dd/MM/yyyy" navigator="true" yearRange="c+3:c-3" ></p:calendar>
+		
+			
+		</p:panelGrid>
+			
+			<p:commandButton value="submit" action="#{test.submit}" update=":reg" ></p:commandButton>
+					
+					<p:commandButton value="back" action="#{test.welcome}" immediate="true"></p:commandButton>
+			</p:panel>
+			
+			</h:form>
+			
+</h:body>
+</f:view>
+</html>
